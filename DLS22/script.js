@@ -111,59 +111,34 @@ function drawCard() {
         ctx.font = '25px Renogare';
         ctx.fillText(value('lastName'), 130, value('firstName') == '' ? 299 : 305);
 
- // Stats
-ctx.font = '20px Renogare';
-var coordinates = [[335, 106], [335, 153], [335, 200], [335, 246], [434, 106], [434, 153], [434, 200], [434, 246]];
-var OVR = parseInt(prompt("Enter OVR value: "));
-var total = 0;
+        // Stats
+        ctx.font = '20px Renogare';
+        var coordinates = [[335, 106], [335, 153], [335, 200], [335, 246], [434, 106], [434, 153], [434, 200], [434, 246]];
+        for (var i = 1; i < 9; i++) {
+            if (value(`stats${i}`) > 0 && value(`stats${i}`) <= 59) {
+                ctx.fillStyle = '#d9342b';
+            } else if (value(`stats${i}`) > 59 && value(`stats${i}`) <= 69) {
+                ctx.fillStyle = '#e08835';
+            } else if (value(`stats${i}`) > 69 && value(`stats${i}`) <= 79) {
+                ctx.fillStyle = '#eadd4c';
+            } else if (value(`stats${i}`) > 79 && value(`stats${i}`) <= 89) {
+                ctx.fillStyle = '#5eca3d';
+            } else if (value(`stats${i}`) > 89 && value(`stats${i}`) <= 100) {
+                ctx.fillStyle = '#62d0c7';
+            }
 
-// Randomize stats
-var stats = [];
-for (var i = 0; i < 8; i++) {
-  var stat = Math.floor(Math.random() * 11) + 69;
-  if (i >= 0 && i <= 3) {
-    // Attackers have low TAC
-    stat = Math.floor(Math.random() * 11) + 59;
-  } else {
-    // Defenders have low SPE
-    stat = Math.floor(Math.random() * 11) + 79;
-  }
-  total += stat;
-  stats.push(stat);
-}
-
-// Scale stats to match OVR
-var ratio = OVR / total;
-for (var i = 0; i < 8; i++) {
-  stats[i] = Math.round(stats[i] * ratio);
-}
-
-// Display stats
-for (var i = 1; i < 9; i++) {
-  if (stats[i-1] > 0 && stats[i-1] <= 59) {
-    ctx.fillStyle = '#d9342b';
-  } else if (stats[i-1] > 59 && stats[i-1] <= 69) {
-    ctx.fillStyle = '#e08835';
-  } else if (stats[i-1] > 69 && stats[i-1] <= 79) {
-    ctx.fillStyle = '#eadd4c';
-  } else if (stats[i-1] > 79 && stats[i-1] <= 89) {
-    ctx.fillStyle = '#5eca3d';
-  } else if (stats[i-1] > 89 && stats[i-1] <= 100) {
-    ctx.fillStyle = '#62d0c7';
-  }
-
-  if (stats[i-1] == 100) {
-    ctx.save();
-    ctx.translate(coordinates[i - 1][0], coordinates[i - 1][1]);
-    ctx.save();
-    ctx.scale(0.9, 1);
-    ctx.fillText(stats[i-1], 0, 0);
-    ctx.restore();
-    ctx.restore();
-  } else {
-    ctx.fillText(stats[i-1], coordinates[i - 1][0], coordinates[i - 1][1]);
-  }
-}
+            if (value(`stats${i}`) == 100) {
+                ctx.save();
+                ctx.translate(coordinates[i - 1][0], coordinates[i - 1][1]);
+                ctx.save();
+                ctx.scale(0.9, 1);
+                ctx.fillText(value(`stats${i}`), 0, 0);
+                ctx.restore();
+                ctx.restore();
+            } else {
+                ctx.fillText(value(`stats${i}`), coordinates[i - 1][0], coordinates[i - 1][1]);
+            }
+        }
 
         // Rating Circle
         if (!checked('maxed')) {

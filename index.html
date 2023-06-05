@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="DLS Card Creator">
-    <meta property="og:description" content="Một trình tạo thẻ cho trò chơi bóng đá phổ biến của First Touch Games.">
-    <meta property="og:url" content="https://github.com/haideptrai9/DLS-Card-Creator">
+    <meta property="og:description" content="A card creator for the popular soccer game by First Touch Games.">
+    <meta property="og:url" content="https://theshinramen.github.io/DLS-Card-Creator/">
     <meta name="google-site-verification" content="CRrsf9TPdGWEMl5jObV1dtqSCtLpIGVoiDT8lNEDGhQ" />
-    <title>Tạo Thẻ DLS</title>
+    <title>DLS Card Creator</title>
     <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <h1>Tạo thẻ DLS
-            <span>by <a href="https://github.com/haideptrai9/DLS-Card-Creator" target="_blank">shinramen</a></span>
+        <h1>DLS Card Creator
+            <span>by <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">shinramen</a></span>
         </h1>
-        <h3>Trình tạo thẻ cho trò chơi bóng đá của First Touch Games.</h3>
+        <h3>A card creator for the popular soccer game by First Touch Games.</h3>
     </header>
     <div>
-        <p>Vui lòng chọn phiên bản trò chơi.</p>
+        <p>Please choose a game version.</p>
         <select id="version" onchange="window.location.assign(`/DLS-Card-Creator/${value}`);">
             <option disabled selected>
-                Chọn
+                Select
             </option>
             <option value="DLS19">
                 DLS 19

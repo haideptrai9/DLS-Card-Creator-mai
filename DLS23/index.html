@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="DLS Card Creator">
     <meta property="og:description" content="A card creator for the popular soccer game by First Touch Games.">
-    <meta property="og:url" content="https://github.com/haideptrai9">
+    <meta property="og:url" content="https://theshinramen.github.io/DLS-Card-Creator/DLS23/">
     <title>DLS Card Creator</title>
     <link href="style.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
 <body onload="drawCard()">
     <header>
         <h1><a href="/DLS-Card-Creator/">DLS CARD CREATOR</a>
-            <span>by <a href="https://github.com/haideptrai9" target="_blank">haideptrai9</a></span>
+            <span>by <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">shinramen</a></span>
         </h1>
     </header>
     <div>
@@ -35,16 +35,13 @@
                 <option selected value="DLS23">
                     DLS 23
                 </option>
-                <option selected value="DLS23">
-                    DLS 23 (Beta)
-                </option>
             </select>
         </p>
     </div>
     <div id="settings">
         <p>Name
-            <input id="firstName" type="text" value="LIONEL" style="font-weight: bold;">
-            <input id="lastName" type="text" value="MESSI" style="font-weight: bold;">            
+            <input id="firstName" type="text" value="LIONEL">
+            <input id="lastName" type="text" value="MESSI">
         </p>
         <p>Card Type
             <select id="cardType">
@@ -58,8 +55,10 @@
                     Common
                 </option>
             </select>
+            <!--
             Maxed
             <input id="maxed" type="checkbox" onchange="clearCard();">
+            -->
             Height
             <input id="height" max="999" min="1" type="number" value="170">
             Foot
@@ -144,16 +143,18 @@
         </p>
     </div>
     <div id="buttons" style="position: fixed; bottom: 20px; right: 20px;">
-        <a href="/DLS-Card-Creator-test">
+        <a href="/DLS-Card-Creator">
             <img src="/DLS-Card-Creator/assets/icon/home.png" style="border-radius: 10px;" height="30px">
         </a>
-        <a href="https://github.com/haideptrai9" target="_blank">
+        <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">
             <img src="/DLS-Card-Creator/assets/icon/github.png" style="border-radius: 10px;" height="30px">
         </a>
         <a href="https://discord.gg/uMtYYpGaZB">
             <img src="/DLS-Card-Creator/assets/icon/discord.png" style="border-radius: 10px;" height="30px">
         </a>
-        
+        <a href="https://www.buymeacoffee.com/shinramen" target="_blank">
+            <img src="/DLS-Card-Creator/assets/icon/bmac.png" style="border-radius: 10px;" height="30px">
+        </a>
     </div>
 
     <script src="script.js"></script>
